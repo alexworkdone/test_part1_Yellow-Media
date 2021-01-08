@@ -1,11 +1,7 @@
-const formTask3 = document.getElementById('formTask3');
-const urlTask3 = document.getElementById('urlTask3');
-const boxTask3 = document.getElementById('boxTask3');
-
-function getAllUrlParams(url) {
+const getAllUrlParams = (url) => {
     let queryString = url.split('?')[1];
 
-    let obj = {};
+    const obj = {};
 
     if(queryString) {
         queryString = queryString.split('#')[0];
@@ -34,7 +30,7 @@ function getAllUrlParams(url) {
     return obj;
 }
 
-function isEmptyObject(obj) {
+const isEmptyObject = (obj) => {
     for (var i in obj) {
         if (obj.hasOwnProperty(i)) {
             return false;
@@ -43,13 +39,19 @@ function isEmptyObject(obj) {
     return true;
 }
 
-formTask3.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if(!urlTask3.value) return;
+(function initTask3() {
+    const formTask3 = document.getElementById('formTask3');
+    const urlTask3 = document.getElementById('urlTask3');
+    const boxTask3 = document.getElementById('boxTask3');
 
-    let resultObj = getAllUrlParams(urlTask3.value);
-    if(isEmptyObject(resultObj)) {
-        resultObj = "Not found";
-    }
-    boxTask3.innerHTML = `<div class="fw-bolder center m-b-8">Result:</div><div class="resultCode m-b-16">${JSON.stringify(resultObj)}</div>`;
-});
+    formTask3.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if(!urlTask3.value) return;
+
+        let resultObj = getAllUrlParams(urlTask3.value);
+        if(isEmptyObject(resultObj)) {
+            resultObj = "Not found";
+        }
+        boxTask3.innerHTML = `<div class="fw-bolder center m-b-8">Result:</div><div class="resultCode m-b-16">${JSON.stringify(resultObj)}</div>`;
+    });
+})();
