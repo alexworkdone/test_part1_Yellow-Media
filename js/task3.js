@@ -1,4 +1,3 @@
-;
 const formTask3 = document.getElementById('formTask3');
 const urlTask3 = document.getElementById('urlTask3');
 const boxTask3 = document.getElementById('boxTask3');
@@ -35,10 +34,22 @@ function getAllUrlParams(url) {
     return obj;
 }
 
+function isEmptyObject(obj) {
+    for (var i in obj) {
+        if (obj.hasOwnProperty(i)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 formTask3.addEventListener('submit', (e) => {
     e.preventDefault();
     if(!urlTask3.value) return;
 
-    const resultObj = getAllUrlParams(urlTask3.value);
-    boxTask3.innerHTML = `<div class="bolder center m-b-8">Result:</div><div class="resultCode m-b-16">${JSON.stringify(resultObj)}</div>`;
+    let resultObj = getAllUrlParams(urlTask3.value);
+    if(isEmptyObject(resultObj)) {
+        resultObj = "Not found";
+    }
+    boxTask3.innerHTML = `<div class="fw-bolder center m-b-8">Result:</div><div class="resultCode m-b-16">${JSON.stringify(resultObj)}</div>`;
 });

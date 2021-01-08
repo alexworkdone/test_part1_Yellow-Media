@@ -1,5 +1,6 @@
 /* https://autoprefixer.github.io/ */
 /* https://jigsaw.w3.org/css-validator/ */
+/* https://cssminifier.com/ */
 
 /* variables */
 :root {
@@ -71,7 +72,8 @@ ul {
 .m-b-8  { margin-bottom: 8px !important; }
 .m-b-16 { margin-bottom: 16px !important; }
 
-.bolder { font-weight: 500; }
+.fw-bolder { font-weight: 500; }
+.fw-normal { font-weight: 400; }
 
 .center { text-align: center; }
 

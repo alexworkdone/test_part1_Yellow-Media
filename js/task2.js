@@ -1,4 +1,3 @@
-;
 const formTask2 = document.getElementById('formTask2');
 const textareaTask2 = document.getElementById('textTask2');
 const submitTask2 = document.getElementById("submitTask2");

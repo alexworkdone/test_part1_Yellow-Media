@@ -1,4 +1,3 @@
-;
 const textareaTask1 = document.getElementById("textTask1");
 const buttonTask1 = document.getElementById("buttonTask1");
 
@@ -8,11 +7,11 @@ function getAnswer() {
     if(!textareaTask1.value) {
         textareaTask1.value = `You haven't entered an app to speed up collaboration - I'll deliver the text myself.`;
     }
-    const objSumbol = maxSymbol(textareaTask1.value);
+    const objSymbol = maxSymbol(textareaTask1.value);
     const answer = document.querySelector(".answer");
     if(answer) answer.remove();
     let div = document.createElement("div");
-    div.innerHTML = `The character "${Object.keys(objSumbol)[0]}" in a string (case insensitive) found ${Object.values(objSumbol)[0]} times.`;
+    div.innerHTML = `The character "${Object.keys(objSymbol)[0]}" in a string (case insensitive) found ${Object.values(objSymbol)[0]} times.`;
     div.classList.add("answer", "m-b-16");
     textareaTask1.before(div);
 };
