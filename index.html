@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Test Part 1</title>
+  <link rel='stylesheet' href='style/style.min.css'>
+  <!-- validator html - https://validator.w3.org/ -->
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title m-t-0">Task 1</div>
+    <div class="sub-title">Write a function that find the most frequent character in a string (case insensitive).</div>
+    <textarea id="textTask1" class="m-b-16" name="text" placeholder="Enter Text..."></textarea>
+    <div class="btns">
+      <div id="buttonTask1" class="btn btn-medium btn-success">Find Now</div>
+    </div>
+
+    <div class="title">Task 2</div>
+    <div class="sub-title">
+      <p>Create simple HTML form with text field and buttons “Set” and “Clear”. On submit form set
+      item to local storage with key “num23” and value from the text field. On click “Clear” button
+      clean up text field and delete item “num23” from local storage. On page load get item
+      “num23” from local storage, create paragraph element, set according value into paragraph,
+      and insert it before form. Paint paragraph in red if item value is odd and in green if item value
+      is even.</p>
+      <p>Text field should accept only numbers.</p>
+      <p>Form should not be submitted if the field value is empty.</p>
+      <p>Disable “Set” button if the field value is empty.</p>
+    </div>
+    <form id="formTask2">
+      <input id="textTask2" class="m-b-16" type="number" placeholder="Enter numbers..." />
+      <div class="btns">
+        <input id="submitTask2" type="submit" class="btn btn-medium btn-success invert" value="Set" />
+        <input type="reset" class="btn btn-medium btn-danger invert" value="Clear" />
+      </div>
+    </form>
+
+    <div class="title">Task 3</div>
+    <div class="sub-title">
+      <p>Write script that will parse query params from url and transform it into object with according key and value.</p>
+      <p>URL example:</p>
+      <p class="bolder p-l-40">http://localhost:63342/test/index.html?em=world&ew=book</p>
+      <p>Object example:</p>
+      <pre>
+      {
+        “em” : ”world”,
+        “ew” : ”book”
+      }
+      </pre>
+    </div>
+    <form id="formTask3">
+      <input id="urlTask3" class="m-b-16" type="text" placeholder="Enter test url..." value="http://localhost:63342/test/index.html?em=world&ew=book" />
+      <div class="btns">
+        <input type="submit" class="btn btn-medium btn-success" value="Test" />
+      </div>
+    </form>
+    <div id="boxTask3"></div>
+
+    <div class="title">Task 4</div>
+    <div class="sub-title">
+      <p>Write script that displays a list of products from server response data.</p>
+      <p>Request URL: http://54.39.188.42/</p>
+      <p>Request method: GET</p>
+      <p>Server returns encoded JSON string in base64</p>
+    </div>
+    <div id="boxTask4" class="row"></div>
+  </div>
+
+  <script src="script/task1.js"></script>
+  <script src="script/task2.js"></script>
+  <script src="script/task3.js"></script>
+  <script src="script/task4.js"></script>
+</body>
+
+</html>
